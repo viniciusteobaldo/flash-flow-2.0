@@ -27,7 +27,6 @@ export function FlashcardModal({
   const dialogRef = useRef<HTMLDialogElement>(null)
   const titleId = 'flashcard-modal-title'
 
-  // Opens the native dialog and restores focus to the trigger element on unmount
   useEffect(() => {
     const previousFocus = document.activeElement as HTMLElement | null
     const dialog = dialogRef.current
@@ -37,7 +36,6 @@ export function FlashcardModal({
     }
   }, [])
 
-  // ESC key fires the native 'cancel' event — prevent default close and delegate to React state
   useEffect(() => {
     const dialog = dialogRef.current
     if (!dialog) return
@@ -184,7 +182,7 @@ export function FlashcardModal({
         </div>
       </form>
 
-      {/* Região live para anunciar mudanças de estado assíncrono a leitores de tela */}
+      {}
       <div aria-live="polite" aria-atomic="true" className="sr-only">
         {loading ? 'Salvando flashcard, aguarde...' : ''}
       </div>
