@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  /* Font */
+  --default-font-family: "Inter", "sans-serif";
+
+  /* Colors */
+  --color-gray-100: #E2E2E2;
+  --color-gray-200: #3F4658;
+  --color-gray-300: #1E1E1E;
+
+  --color-purple-050: #F8F7FF;
+  --color-purple-100: #E7DDFF;
+  --color-purple-200: #8B5CF6;
+  --color-purple-300: #6A3FCB;
+
+  --color-purple-gradient: linear-gradient(to right, #7C3AED 0%, #6D28D9 100%);
+}
+
+.font-manrope {
+  font-family: "Manrope", "sans-serif";
+}
+/* Card flip animation */
+.card-flip-container {
+  perspective: 1000px;
+}
+
+.card-flip-inner {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-flip-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+}
+
+.b-shadow {
+  box-shadow: 0px 10px 30px 0px rgba(42, 52, 57, 0.06);
+}
